@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Banner from "./Banner";
 import Cart from "./Cart";
 import Recommendation from "./Recommendation";
@@ -6,6 +8,8 @@ import logo from "../assets/logo.png"
 import Footer from "./Footer.tsx";
 
 function App() {
+  const [cart, setCart] = useState(0)
+
   return (
     <>
       <Banner>
@@ -15,10 +19,11 @@ function App() {
           <Recommendation/>
         </div>
       </Banner>
-      <Cart />
-
-      <ShoppingList />
-      <Footer/>
+      <div className='lmj-layout-inner'>
+				<Cart cart={cart} setCart={setCart}/>
+				<ShoppingList cart={cart} setCart={setCart}/>
+			</div>
+			<Footer />
     </>
   );
 }

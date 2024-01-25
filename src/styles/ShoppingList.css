@@ -3,5 +3,5 @@
 	padding: 32px;
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 800px;
+	width: 100%;
 }

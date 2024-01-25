@@ -2,7 +2,7 @@ import { plantList } from '../datas/plantList'
 import PlantItem from './PlantItem'
 import '../styles/ShoppingList.css'
 
-function ShoppingList() {
+function ShoppingList({cart, setCart}) {
 	const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
@@ -18,14 +18,18 @@ function ShoppingList() {
 			</ul>
 			<ul className='lmj-plant-list'>
 				{plantList.map(({ id, cover, name, water, light }) => (
-					<PlantItem
-            key={id}
-						id={id}
-						cover={cover}
-						name={name}
-						water={water}
-						light={light}
-					/>
+					<div key={id}>                 
+							<PlantItem
+								id={id}
+								cover={cover}
+								name={name}
+								water={water}
+								light={light}
+							/>      
+							 <button onClick={() => setCart(cart + 1)}>Ajouter</button>
+					</div>
+				
+					
 				))}
 			</ul>
 		</div>
