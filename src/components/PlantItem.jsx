@@ -1,7 +1,7 @@
 import CareScale from './CareScale'
 import '../styles/PlantItem.css'
 
-function PlantItem({ id, cover, name, water, light }) {
+function PlantItem({ id, cover, name, water, light, price, }) {
 	function handleClick(plantName) {
 		alert(`Vous voulez acheter 1 ${plantName} ? Très bon choix 🌱✨`)
 	}
@@ -14,6 +14,7 @@ function PlantItem({ id, cover, name, water, light }) {
 				<CareScale careType='water' scaleValue={water} />
 				<CareScale careType='light' scaleValue={light} />
 			</div>
+			<div>{price} €</div>
 		</li>
 	)
 }
